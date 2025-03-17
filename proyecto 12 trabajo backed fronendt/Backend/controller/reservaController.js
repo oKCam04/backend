@@ -24,7 +24,7 @@ class ReservaController{
         try{
             let {id}=req.params;
             let usuario=await ReservaService.eliminarReserva(id);
-            res.json(usuario);
+            res.json("eliminado correctamente");
         }catch(e){
             res.json({error:"error en la peticion"})
         }
@@ -34,7 +34,7 @@ class ReservaController{
             let {id}=req.params;
             let {fechaReserva,lugar,nombreReserva}=req.body;
             let usuario=await ReservaService.actualizarReserva(id,fechaReserva,lugar,nombreReserva);
-            res.json(usuario);
+            res.json(req.body);
         }catch(e){
             res.json({error:"error en la peticion"})
         }
